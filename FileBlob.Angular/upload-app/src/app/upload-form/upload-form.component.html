@@ -1,0 +1,35 @@
+<div class="form">
+<form [formGroup]="myForm" class="example-form" novalidate (ngSubmit)="submit()">
+
+  <mat-form-field class="example-full-width form-block" >
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName ="email" [errorStateMatcher]="matcher"
+             placeholder="Ex. pat@example.com">
+      <mat-hint>Put your email here</mat-hint>
+      <mat-error *ngIf="myForm.get('email')?.hasError('email') && !myForm.get('email')?.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="myForm.get('email')?.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="file-upload form-block">
+      <input  #fileUpload hidden="true" type="file" onclick="this.value=null" (change)="onFileChange($event)">
+      <div class="upload-hint">
+
+       <button type="button" mat-mini-fab color="primary" class="upload-btn"
+         (click)="fileUpload.click()">
+           <mat-icon>attach_file</mat-icon>
+       </button>
+       {{myForm.get("file")?.value?.name || "Upload your docx file please."}}
+      </div>
+
+       <mat-error *ngIf="fileError && !myForm.get('file')?.hasError('required')">
+        File is have to be <strong>.docx</strong>
+      </mat-error>
+
+   </div>
+   <button class="form-block" mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Submit</button>
+  </form>
+</div>

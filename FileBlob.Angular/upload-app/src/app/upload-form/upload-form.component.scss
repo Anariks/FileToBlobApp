@@ -1,0 +1,80 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 150px;
+  opacity: 100px;
+}
+
+.form-block {
+  margin-bottom: 15px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  align-self: center;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.file-input {
+  display: none;
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.file-upload {
+  min-height: 60px;
+}
+
+.upload-hint {
+  min-width: 500px;
+}
+
+.modal {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  
+}
+.pop-up {
+
+  width: 400px;
+  height: 200px;
+  background-color: bisque;
+}
